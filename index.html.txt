@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caja de Herramientas Coreográficas - Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Montserrat:wght@300;400;600;800&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #e5e5e5;
+            -webkit-print-color-adjust: exact;
+        }
+
+        h1, h2, h3, .title-font {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        /* Estilo de Placa */
+        .placa {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            break-inside: avoid;
+        }
+
+        .placa-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .placa-body {
+            padding: 1.5rem;
+        }
+
+        /* Temas de Color */
+        .theme-laban .placa-header { background-color: #78350f; color: #fffbeb; } /* Amber-900 */
+        .theme-laban .accent { color: #92400e; }
+        .theme-laban .bg-soft { background-color: #fffbeb; }
+
+        .theme-poly .placa-header { background-color: #1e3a8a; color: #eff6ff; } /* Blue-900 */
+        .theme-poly .accent { color: #2563eb; }
+        .theme-poly .bg-soft { background-color: #eff6ff; }
+
+        .theme-struct .placa-header { background-color: #be123c; color: #fff1f2; } /* Rose-700 */
+        .theme-struct .accent { color: #e11d48; }
+        .theme-struct .bg-soft { background-color: #fff1f2; }
+
+        .theme-lang .placa-header { background-color: #1f2937; color: #f9fafb; } /* Gray-800 */
+        .theme-lang .accent { color: #059669; } /* Emerald */
+        .theme-lang .bg-soft { background-color: #f3f4f6; }
+
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .placa {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                margin-bottom: 1cm;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 text-gray-800">
+
+    <!-- Controls -->
+    <div class="max-w-6xl mx-auto mb-8 flex justify-between items-center no-print bg-white p-4 rounded-lg shadow-lg border border-gray-200">
+        <div>
+            <h2 class="text-xl font-bold title-font uppercase text-gray-800">Panel de Recursos</h2>
+            <p class="text-sm text-gray-500">Material Visual Educativo para Circo Urbano & Danza</p>
+        </div>
+        <button onclick="window.print()" class="bg-gray-900 text-white px-6 py-2 rounded font-bold hover:bg-gray-700 transition-colors flex items-center gap-2 shadow-md">
+            <i class="fas fa-print"></i> Imprimir Láminas
+        </button>
+    </div>
+
+    <div class="max-w-6xl mx-auto space-y-12 print:space-y-0">
+
+        <!-- ========================================== -->
+        <!-- TEMA 1: LABAN (Tonos Tierra) -->
+        <!-- ========================================== -->
+        <section class="theme-laban">
+            <!-- Portada Tema 1 -->
+            <div class="placa bg-amber-50 border-l-8 border-amber-900">
+                <div class="p-8 md:p-12 text-center">
+                    <div class="inline-block p-3 rounded-full bg-amber-100 text-amber-900 mb-4 text-3xl"><i class="fas fa-cube"></i></div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-amber-900 uppercase tracking-tight mb-2 title-font">Effort-Shape</h1>
+                    <h2 class="text-xl md:text-2xl text-amber-700 font-light uppercase tracking-widest">El Lenguaje Oculto del Movimiento</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto italic">"Más allá del 'qué' hacemos o 'dónde' lo hacemos, Laban nos invita a observar el 'cómo'. Cuatro factores definen la cualidad de nuestro movimiento."</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- PESO -->
+                <div class="placa">
+                    <div class="placa-header flex justify-between items-center">
+                        <h3 class="text-xl font-bold uppercase"><i class="fas fa-weight-hanging mr-2"></i> Peso (Weight)</h3>
+                        <span class="text-xs opacity-75 uppercase tracking-wider">Gravedad</span>
+                    </div>
+                    <div class="placa-body grid grid-cols-2 gap-4 h-full">
+                        <div class="bg-amber-50 p-4 rounded border border-amber-100">
+                            <h4 class="font-bold text-amber-900 uppercase mb-2"><i class="fas fa-dumbbell"></i> Fuerte</h4>
+                            <p class="text-sm text-gray-700 leading-snug">Potente, directo, usa la gravedad. Impacto.</p>
+                            <div class="mt-2 text-xs text-amber-800 bg-amber-100 inline-block px-2 py-1 rounded">Drops, Powermove</div>
+                        </div>
+                        <div class="bg-stone-50 p-4 rounded border border-stone-100">
+                            <h4 class="font-bold text-stone-600 uppercase mb-2"><i class="fas fa-feather-alt"></i> Ligero</h4>
+                            <p class="text-sm text-gray-700 leading-snug">Sutil, delicado, desafía la gravedad. Flotar.</p>
+                            <div class="mt-2 text-xs text-stone-600 bg-stone-200 inline-block px-2 py-1 rounded">Transición suave</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TIEMPO -->
+                <div class="placa">
+                    <div class="placa-header flex justify-between items-center">
+                        <h3 class="text-xl font-bold uppercase"><i class="fas fa-stopwatch mr-2"></i> Tiempo (Time)</h3>
+                        <span class="text-xs opacity-75 uppercase tracking-wider">Pulso Interno</span>
+                    </div>
+                    <div class="placa-body grid grid-cols-2 gap-4 h-full">
+                        <div class="bg-amber-50 p-4 rounded border border-amber-100">
+                            <h4 class="font-bold text-amber-900 uppercase mb-2"><i class="fas fa-bolt"></i> Súbito</h4>
+                            <p class="text-sm text-gray-700 leading-snug">Urgente, repentino, impulsivo. ¡Ahora!</p>
+                            <div class="mt-2 text-xs text-amber-800 bg-amber-100 inline-block px-2 py-1 rounded">Explosión, Hit</div>
+                        </div>
+                        <div class="bg-stone-50 p-4 rounded border border-stone-100">
+                            <h4 class="font-bold text-stone-600 uppercase mb-2"><i class="fas fa-hourglass-half"></i> Sostenido</h4>
+                            <p class="text-sm text-gray-700 leading-snug">Pausado, prolongado, eterno. Calma.</p>
+                            <div class="mt-2 text-xs text-stone-600 bg-stone-200 inline-block px-2 py-1 rounded">Cámara lenta</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESPACIO -->
+                <div class="placa">
+                    <div class="placa-header flex justify-between items-center">
+                        <h3 class="text-xl font-bold uppercase"><i class="fas fa-arrows-alt mr-2"></i> Espacio (Space)</h3>
+                        <span class="text-xs opacity-75 uppercase tracking-wider">Atención</span>
+                    </div>
+                    <div class="placa-body grid grid-cols-2 gap-4 h-full">
+                        <div class="bg-amber-50 p-4 rounded border border-amber-100">
+                            <h4 class="font-bold text-amber-900 uppercase mb-2"><i class="fas fa-long-arrow-alt-right"></i> Directo</h4>
+                            <p class="text-sm text-gray-700 leading-snug">Línea recta, láser, un solo punto de foco.</p>
+                            <div class="mt-2 text-xs text-amber-800 bg-amber-100 inline-block px-2 py-1 rounded">Mirada fija</div>
+                        </div>
+                        <div class="bg-stone-50 p-4 rounded border border-stone-100">
+                            <h4 class="font-bold text-stone-600 uppercase mb-2"><i class="fas fa-wave-square"></i> Flexible</h4>
+                            <p class="text-sm text-gray-700 leading-snug">Sinuoso, explora todo, visión periférica.</p>
+                            <div class="mt-2 text-xs text-stone-600 bg-stone-200 inline-block px-2 py-1 rounded">Contorsión</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FLUJO -->
+                <div class="placa">
+                    <div class="placa-header flex justify-between items-center">
+                        <h3 class="text-xl font-bold uppercase"><i class="fas fa-water mr-2"></i> Flujo (Flow)</h3>
+                        <span class="text-xs opacity-75 uppercase tracking-wider">Energía</span>
+                    </div>
+                    <div class="placa-body grid grid-cols-2 gap-4 h-full">
+                        <div class="bg-amber-50 p-4 rounded border border-amber-100">
+                            <h4 class="font-bold text-amber-900 uppercase mb-2"><i class="far fa-square"></i> Contenido</h4>
+                            <p class="text-sm text-gray-700 leading-snug">Restringido, preciso, listo para parar. Tensión.</p>
+                            <div class="mt-2 text-xs text-amber-800 bg-amber-100 inline-block px-2 py-1 rounded">Freeze, Robot</div>
+                        </div>
+                        <div class="bg-stone-50 p-4 rounded border border-stone-100">
+                            <h4 class="font-bold text-stone-600 uppercase mb-2"><i class="fas fa-wind"></i> Libre</h4>
+                            <p class="text-sm text-gray-700 leading-snug">Fluido, desinhibido, difícil de detener.</p>
+                            <div class="mt-2 text-xs text-stone-600 bg-stone-200 inline-block px-2 py-1 rounded">Spin, Péndulo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen Combinaciones -->
+            <div class="placa bg-white mt-6">
+                <div class="placa-header bg-stone-800 text-white">
+                    <h3 class="text-lg font-bold uppercase">Combinaciones Dinámicas</h3>
+                </div>
+                <div class="placa-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
+                    <div class="p-3 bg-red-50 rounded border border-red-100">
+                        <div class="text-2xl mb-1 text-red-800"><i class="fas fa-fist-raised"></i></div>
+                        <div class="font-bold text-red-900 uppercase text-sm">Golpe</div>
+                        <div class="text-xs text-gray-600 mt-1">Fuerte + Directo + Súbito</div>
+                    </div>
+                    <div class="p-3 bg-blue-50 rounded border border-blue-100">
+                        <div class="text-2xl mb-1 text-blue-800"><i class="fas fa-cloud"></i></div>
+                        <div class="font-bold text-blue-900 uppercase text-sm">Flotar</div>
+                        <div class="text-xs text-gray-600 mt-1">Ligero + Flexible + Sostenido</div>
+                    </div>
+                    <div class="p-3 bg-orange-50 rounded border border-orange-100">
+                        <div class="text-2xl mb-1 text-orange-800"><i class="fas fa-hand-rock"></i></div>
+                        <div class="font-bold text-orange-900 uppercase text-sm">Presionar</div>
+                        <div class="text-xs text-gray-600 mt-1">Fuerte + Sostenido + Directo</div>
+                    </div>
+                    <div class="p-3 bg-purple-50 rounded border border-purple-100">
+                        <div class="text-2xl mb-1 text-purple-800"><i class="fas fa-bacon"></i></div>
+                        <div class="font-bold text-purple-900 uppercase text-sm">Torcer</div>
+                        <div class="text-xs text-gray-600 mt-1">Fuerte + Sostenido + Flexible</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ========================================== -->
+        <!-- TEMA 2: POLIMOCIONALIDAD (Tonos Fríos) -->
+        <!-- ========================================== -->
+        <section class="theme-poly">
+            <!-- Portada Tema 2 -->
+            <div class="placa bg-blue-50 border-l-8 border-blue-900">
+                <div class="p-8 md:p-12 text-center">
+                    <div class="inline-block p-3 rounded-full bg-blue-100 text-blue-900 mb-4 text-3xl"><i class="fas fa-music"></i></div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-blue-900 uppercase tracking-tight mb-2 title-font">Polimocionalidad</h1>
+                    <h2 class="text-xl md:text-2xl text-blue-700 font-light uppercase tracking-widest">La Orquesta del Cuerpo</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto italic">"Abandona la idea de una sola emoción lineal. El cuerpo es un campo de diálogo donde la tristeza, la alegría y la resistencia suenan al mismo tiempo."</p>
+                </div>
+            </div>
+
+            <!-- El Canto Firme -->
+            <div class="placa">
+                <div class="placa-body flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-full md:w-1/3 flex justify-center text-blue-200">
+                        <i class="fas fa-tree text-9xl"></i>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-2xl font-bold text-blue-900 uppercase mb-2">El Canto Firme: La Raíz</h3>
+                        <p class="text-gray-700 mb-4 font-semibold">Es la Frase Madre. El núcleo expresivo de toda la pieza.</p>
+                        <div class="bg-blue-50 p-4 rounded border-l-4 border-blue-600">
+                            <p class="text-sm italic text-blue-900">"Si la coreografía fuera un árbol, el Canto Firme es el tronco. De él brotan todas las ramas."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Herramientas -->
+            <div class="placa">
+                <div class="placa-header">
+                    <h3 class="text-xl font-bold uppercase"><i class="fas fa-toolbox mr-2"></i> Herramientas de Manipulación</h3>
+                </div>
+                <div class="placa-body grid md:grid-cols-3 gap-4">
+                    <div class="p-4 bg-slate-50 rounded group hover:bg-blue-50 transition-colors">
+                        <h4 class="font-bold text-blue-900"><i class="fas fa-bone mr-2 opacity-50"></i> Puntales</h4>
+                        <p class="text-xs text-gray-600 mt-1">Los "huesos" esenciales de la frase.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded group hover:bg-blue-50 transition-colors">
+                        <h4 class="font-bold text-blue-900"><i class="fas fa-columns mr-2 opacity-50"></i> Fabordón</h4>
+                        <p class="text-xs text-gray-600 mt-1">Repetir los puntales para dar soporte.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded group hover:bg-blue-50 transition-colors">
+                        <h4 class="font-bold text-blue-900"><i class="fas fa-sync-alt mr-2 opacity-50"></i> Vaso Ostinato</h4>
+                        <p class="text-xs text-gray-600 mt-1">Repetición obsesiva en bucle (Loop).</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded group hover:bg-blue-50 transition-colors">
+                        <h4 class="font-bold text-blue-900"><i class="fas fa-random mr-2 opacity-50"></i> Discantus</h4>
+                        <p class="text-xs text-gray-600 mt-1">El espejo distorsionado. Energía contraria.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded group hover:bg-blue-50 transition-colors">
+                        <h4 class="font-bold text-blue-900"><i class="fas fa-backward mr-2 opacity-50"></i> Cancrizans</h4>
+                        <p class="text-xs text-gray-600 mt-1">Retrogradación. Efecto "Rewind".</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded group hover:bg-blue-50 transition-colors">
+                        <h4 class="font-bold text-blue-900"><i class="fas fa-arrows-alt-v mr-2 opacity-50"></i> Contracanto</h4>
+                        <p class="text-xs text-gray-600 mt-1">Oposición total (Alto vs Bajo, Rápido vs Lento).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejemplo Aplicado -->
+            <div class="placa bg-gray-900 text-white">
+                <div class="placa-body">
+                    <h3 class="text-lg font-bold text-blue-300 uppercase mb-4"><i class="fas fa-robot mr-2"></i> Ejemplo: La Máquina Humana</h3>
+                    <div class="flex flex-wrap gap-2 text-sm">
+                        <span class="bg-gray-800 px-3 py-1 rounded border border-gray-700">Canto Firme (Ritmo mecánico)</span>
+                        <span class="text-gray-500">+</span>
+                        <span class="bg-gray-800 px-3 py-1 rounded border border-gray-700">Puntales (Gestos de pulso)</span>
+                        <span class="text-gray-500">+</span>
+                        <span class="bg-blue-900 px-3 py-1 rounded border border-blue-700">Discantus (Glitch/Fallo)</span>
+                        <span class="text-gray-500">=</span>
+                        <span class="font-bold text-blue-200">Textura Viva</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ========================================== -->
+        <!-- TEMA 3: ESTRUCTURAS (Tonos Cálidos) -->
+        <!-- ========================================== -->
+        <section class="theme-struct">
+            <!-- Portada Tema 3 -->
+            <div class="placa bg-rose-50 border-l-8 border-rose-700">
+                <div class="p-8 md:p-12 text-center">
+                    <div class="inline-block p-3 rounded-full bg-rose-100 text-rose-900 mb-4 text-3xl"><i class="fas fa-map-signs"></i></div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-rose-900 uppercase tracking-tight mb-2 title-font">Estructuras</h1>
+                    <h2 class="text-xl md:text-2xl text-rose-700 font-light uppercase tracking-widest">Mapas del Movimiento</h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto italic">"Un esqueleto claro permite que la carne del movimiento cobre vida con fuerza y dirección. No limitan, guían."</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- ABC -->
+                <div class="placa">
+                    <div class="placa-header">
+                        <h3 class="text-xl font-bold uppercase">Estructura ABC</h3>
+                        <span class="text-xs opacity-75">La Tríada Clásica</span>
+                    </div>
+                    <div class="placa-body flex items-center justify-between text-center">
+                        <div class="flex-1">
+                            <div class="text-2xl font-bold text-rose-700">A</div>
+                            <div class="text-xs uppercase mt-1">Inicio</div>
+                        </div>
+                        <i class="fas fa-arrow-right text-gray-300"></i>
+                        <div class="flex-1">
+                            <div class="text-2xl font-bold text-rose-700">B</div>
+                            <div class="text-xs uppercase mt-1">Conflicto</div>
+                        </div>
+                        <i class="fas fa-arrow-right text-gray-300"></i>
+                        <div class="flex-1">
+                            <div class="text-2xl font-bold text-rose-700">C</div>
+                            <div class="text-xs uppercase mt-1">Final</div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-4 text-xs text-gray-500 italic text-center">Ej: Toprock → Footwork → Freeze</div>
+                </div>
+
+                <!-- Rondó -->
+                <div class="placa">
+                    <div class="placa-header">
+                        <h3 class="text-xl font-bold uppercase">Rondó</h3>
+                        <span class="text-xs opacity-75">Siempre volvemos a casa</span>
+                    </div>
+                    <div class="placa-body flex items-center justify-center gap-2">
+                        <span class="w-8 h-8 rounded-full bg-rose-600 text-white flex items-center justify-center font-bold">A</span>
+                        <span class="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center text-xs">B</span>
+                        <span class="w-8 h-8 rounded-full bg-rose-600 text-white flex items-center justify-center font-bold">A</span>
+                        <span class="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center text-xs">C</span>
+                        <span class="w-8 h-8 rounded-full bg-rose-600 text-white flex items-center justify-center font-bold">A</span>
+                    </div>
+                     <div class="px-6 pb-4 text-xs text-gray-500 italic text-center">Ej: Escultura fija recurrente entre actos</div>
+                </div>
+
+                <!-- Canon -->
+                <div class="placa">
+                    <div class="placa-header">
+                        <h3 class="text-xl font-bold uppercase">Canon</h3>
+                        <span class="text-xs opacity-75">La Ola Coreográfica</span>
+                    </div>
+                    <div class="placa-body">
+                         <div class="flex gap-1 justify-center mb-2">
+                            <span class="w-4 h-12 bg-rose-800 rounded opacity-100"></span>
+                            <span class="w-4 h-12 bg-rose-800 rounded opacity-75 mt-2"></span>
+                            <span class="w-4 h-12 bg-rose-800 rounded opacity-50 mt-4"></span>
+                            <span class="w-4 h-12 bg-rose-800 rounded opacity-25 mt-6"></span>
+                        </div>
+                        <p class="text-xs text-center text-gray-600">Todos hacen lo mismo en tiempos distintos.</p>
+                    </div>
+                </div>
+
+                <!-- Tema y Variación -->
+                <div class="placa">
+                    <div class="placa-header">
+                        <h3 class="text-xl font-bold uppercase">Tema y Variación</h3>
+                        <span class="text-xs opacity-75">Evolución</span>
+                    </div>
+                    <div class="placa-body flex justify-around items-end h-24 pb-2">
+                        <div class="text-center">
+                            <i class="fas fa-circle text-rose-300 text-xl"></i>
+                            <div class="text-xs font-bold mt-1">A</div>
+                        </div>
+                         <div class="text-center">
+                            <i class="fas fa-star text-rose-500 text-2xl"></i>
+                            <div class="text-xs font-bold mt-1">A'</div>
+                        </div>
+                         <div class="text-center">
+                            <i class="fas fa-sun text-rose-700 text-3xl"></i>
+                            <div class="text-xs font-bold mt-1">A''</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Herramientas de Enfasis -->
+            <div class="placa mt-4 bg-rose-50 border border-rose-100">
+                <div class="placa-body grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div>
+                        <div class="font-bold text-rose-900 uppercase text-sm">Reafirmar</div>
+                        <div class="text-xs text-gray-600">Repetir igual</div>
+                    </div>
+                    <div>
+                        <div class="font-bold text-rose-900 uppercase text-sm">Reforzar</div>
+                        <div class="text-xs text-gray-600">Enfatizar acento</div>
+                    </div>
+                    <div>
+                        <div class="font-bold text-rose-900 uppercase text-sm">Recapitular</div>
+                        <div class="text-xs text-gray-600">Volver con cambios</div>
+                    </div>
+                    <div>
+                        <div class="font-bold text-rose-900 uppercase text-sm">Reiterar</div>
+                        <div class="text-xs text-gray-600">Repetición como recurso</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ========================================== -->
+        <!-- TEMA 4: LENGUAJE (Escala de Grises / Verde) -->
+        <!-- ========================================== -->
+        <section class="theme-lang">
+            <!-- Portada Tema 4 -->
+            <div class="placa bg-gray-100 border-l-8 border-gray-800">
+                <div class="p-8 md:p-12 text-center">
+                    <div class="inline-block p-3 rounded-full bg-white text-gray-800 border border-gray-300 mb-4 text-3xl"><i class="fas fa-comment-dots"></i></div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 uppercase tracking-tight mb-2 title-font">Lenguaje</h1>
+                    <h2 class="text-xl md:text-2xl text-gray-600 font-light uppercase tracking-widest">De la Célula al Discurso</h2>
+                    <p class="mt-4 text-gray-500 max-w-2xl mx-auto italic">"Así como las palabras forman oraciones, el movimiento se organiza en unidades que construyen significado."</p>
+                </div>
+            </div>
+
+            <!-- Pirámide Invertida (Bloques de Construcción) -->
+            <div class="placa">
+                <div class="placa-header">
+                    <h3 class="text-xl font-bold uppercase"><i class="fas fa-layer-group mr-2 text-emerald-500"></i> Bloques de Construcción</h3>
+                </div>
+                <div class="placa-body space-y-4">
+                    <!-- Motivo -->
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center text-2xl font-bold text-gray-500">1</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-800 uppercase">Motivo <span class="text-xs text-emerald-600 font-normal normal-case ml-2">(La Palabra)</span></h4>
+                            <p class="text-sm text-gray-600">Unidad mínima significativa. Un gesto, un paso.</p>
+                            <p class="text-xs text-gray-400 italic mt-1">Ej: Un swipe, un agarre.</p>
+                        </div>
+                    </div>
+                     <!-- Frase -->
+                    <div class="flex items-center gap-4 pl-8 border-l-2 border-gray-200 ml-8">
+                        <div class="w-16 h-16 bg-gray-300 rounded-lg flex items-center justify-center text-2xl font-bold text-gray-600">2</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-800 uppercase">Frase <span class="text-xs text-emerald-600 font-normal normal-case ml-2">(La Oración)</span></h4>
+                            <p class="text-sm text-gray-600">Unidad breve y completa. Varios motivos.</p>
+                            <p class="text-xs text-gray-400 italic mt-1">Ej: Swipe + Backspin + Freeze.</p>
+                        </div>
+                    </div>
+                     <!-- Secuencia -->
+                    <div class="flex items-center gap-4 pl-8 border-l-2 border-gray-200 ml-16">
+                        <div class="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center text-2xl font-bold text-white">3</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-800 uppercase">Secuencia <span class="text-xs text-emerald-600 font-normal normal-case ml-2">(El Párrafo)</span></h4>
+                            <p class="text-sm text-gray-600">Desarrollo ampliado. Mayor extensión emocional.</p>
+                            <p class="text-xs text-gray-400 italic mt-1">Ej: Un round completo, una rutina.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simbología -->
+            <div class="placa grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+                <div class="p-6 text-center">
+                    <div class="text-gray-400 text-4xl mb-2"><i class="fas fa-id-card"></i></div>
+                    <h3 class="font-bold uppercase text-gray-800">Tema Coreográfico</h3>
+                    <p class="text-sm text-gray-600 mt-2">Reconocible. Estilo personal. Forma.</p>
+                    <p class="text-xs text-emerald-600 mt-1 font-semibold">Ej: El estilo único de un B-boy.</p>
+                </div>
+                <div class="p-6 text-center bg-emerald-50">
+                    <div class="text-emerald-500 text-4xl mb-2"><i class="fas fa-fingerprint"></i></div>
+                    <h3 class="font-bold uppercase text-emerald-900">Leitmotiv</h3>
+                    <p class="text-sm text-gray-600 mt-2">Simbólico. Se transforma. "Sabor" subconsciente.</p>
+                    <p class="text-xs text-emerald-600 mt-1 font-semibold">Ej: La esencia que permanece aunque cambie el paso.</p>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</body>
+</html>
